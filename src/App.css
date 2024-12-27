@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+#cont {
+  width: 100vw;
+  height: 100vh;
+}
+.main {
+  width: 100%;
+  max-width: 520px;
+  min-width: 360px;
+  height: 100%;
+  box-shadow: 0px 0px 3px #2f2f2f;
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+	background: rgba(16, 16, 16, .3);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #101010;
+  border-radius: 5px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Fight View */
+.fight-view {
+  height: 250px;
+}
+.monster-hp-wrap {
+  position: relative;
+  width: 100%;
+  height: 20px;
+}
+.monster-hp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.monster-hp-text {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Menu */
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.menu span {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all .5s;
+}
+.menu span:nth-of-type(1) {
+  background-image: url("./image/ico/ico_state.svg");
+}
+.menu span:nth-of-type(2) {
+  background-image: url("./image/ico/ico_home.svg");
+}
+.menu span:nth-of-type(3) {
+  background-image: url("./image/ico/ico_store.svg");
+}
+.menu span:hover {
+  background-color: #4f4f4f;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* State */
+.contents-view {
+  display: none;
+}
+.contents-view.show {
+  display: block;
+}
+.user-state {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  margin-bottom: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.user-hp-wrap , .user-mp-wrap{
+  position: relative;
+  width: 100%;
+  height: 15px;
+  margin: 0 auto;
+  overflow: hidden;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.user-hp-wrap .user-hp , .user-mp-wrap .user-mp {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.user-hp-wrap .user-hp-text, .user-mp-wrap .user-mp-text {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+.user-wrap {
+  display: flex;
+  gap: 10px;
+}
+.character-image , .user-stack {
+  width: 50%;
+  padding: 5px;
+}
+.character-image {
+  border: 1px solid #202020;
+}
+.user-stack h4{
+  border-bottom: 1px solid #202020;
+  text-align: center;
+  font-weight: 600;
+}
+.skill-slots , .item-slots {
+  display: grid;
+  grid-template-columns: repeat(2 , 1fr);
+  justify-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+.skill-slots li , .item-slots li {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  transition: all .5s;
+}
+.skill-slots li:hover , .item-slots li:hover {
+  background-color: #101010;
 }
