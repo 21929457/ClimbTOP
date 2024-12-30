@@ -22,9 +22,7 @@ export default function UserState() {
 
             <div className="user-wrap">
 
-                <div className="character-image">
-                    <img src="../image/user/ham.png" alt="User_Image"/>
-                </div>
+                <div className="character-image"></div>
 
                 <div className="user-stack">
 

@@ -3,7 +3,7 @@ module.exports = {
   content: [
     "./src/App.js",
     "./src/components/FightView.js",
-    "./src/components/Menu.js",
+    "./src/components/Main.js",
     "./src/components/Contents.js",
     "./src/components/UserState.js",
     "./src/components/Menu.js",

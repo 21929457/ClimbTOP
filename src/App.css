@@ -8,7 +8,6 @@
   min-width: 360px;
   height: 100%;
   box-shadow: 0px 0px 3px #2f2f2f;
-  overflow: auto;
 }
 ::-webkit-scrollbar {
   width: 10px;
@@ -20,6 +19,20 @@
 ::-webkit-scrollbar-thumb {
   background-color: #101010;
   border-radius: 5px;
+}
+
+/* Intro */
+.intro-wrap {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.start {
+  border-radius: 5px;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, .3);
 }
 
 /* Fight View */
@@ -48,11 +61,14 @@
 /* Menu */
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 30px;
 }
-.menu span {
+.menu .icon-wrap {
+  display: flex;
+  gap: 20px;
+}
+.menu .icon-wrap span {
   display: inline-block;
   width: 44px;
   height: 44px;
@@ -62,26 +78,34 @@
   background-position: center;
   transition: all .5s;
 }
-.menu span:nth-of-type(1) {
+.icon-wrap span:nth-of-type(1) {
   background-image: url("./image/ico/ico_state.svg");
 }
-.menu span:nth-of-type(2) {
+.icon-wrap span:nth-of-type(2) {
   background-image: url("./image/ico/ico_home.svg");
 }
-.menu span:nth-of-type(3) {
+.icon-wrap span:nth-of-type(3) {
   background-image: url("./image/ico/ico_store.svg");
 }
-.menu span:hover {
+.icon-wrap span:hover {
   background-color: #4f4f4f;
 }
+.gold {
+  color: #FFD700;
+}
 
-/* State */
+/* content view */
+.content-wrap {
+  max-height: 520px;
+}
 .contents-view {
   display: none;
 }
 .contents-view.show {
   display: block;
 }
+
+/* State */
 .user-state {
   display: flex;
   flex-direction: column;
@@ -139,4 +163,111 @@
 }
 .skill-slots li:hover , .item-slots li:hover {
   background-color: #101010;
+}
+
+/* Village */
+.addskills-contents {
+  overflow-y: auto;
+}
+.addSkills {
+  display: flex;
+  position: relative;
+  min-height: 200px;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.addSkills::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.addSkills.onsen::after {
+  background-image: url(./image/pic/onsen.jpg);
+}
+.addSkills.buff::after {
+  background-image: url(./image/pic/buff.jpg);
+}
+.addSkills:last-of-type {
+  margin-bottom: 0;
+}
+.addSkills .txt {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  gap: 15px;
+  color: white;
+}
+.addSkills .txt * {
+  z-index: 999999;
+}
+.addSkills .txt button {
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+  transition: .5s;
+}
+.addSkills .txt button:hover {
+  background-color: white;
+  color: #202020;
+}
+
+/* store */
+.items {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.item {
+  position: relative;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2px;
+  width: 100px;
+  height: 100px;
+  border-radius: 5px;
+  background-color: #202020;
+}
+.item .name , .item .cost , .item .discBox {
+  visibility: hidden;
+}
+.item:hover .name , .item:hover .cost , .item:hover .discBox {
+  visibility: visible;
+}
+.item .name , .item .cost {
+  font-size: 14px;
+  color: white;
+  margin-top: 5px;
+  line-height: 14px;
+}
+.item .cost {
+  margin-top: unset;
+}
+.item .btn-wrap {
+  width: 100%;
+}
+.item .btn-wrap .info:nth-of-type(1) {
+  border-radius: 5px 0 0 0;
+  border-right: 1px solid #202020;
+}
+.item .btn-wrap .buy:nth-of-type(2) {
+  border-radius: 0 5px 0 0;
+}
+.item .btn-wrap button {
+  width: 50%;
+  background-color: white;
+  font-size: 12px;
 }
