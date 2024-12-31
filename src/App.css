@@ -97,6 +97,7 @@
 /* content view */
 .content-wrap {
   max-height: 520px;
+  overflow-y: auto;
 }
 .contents-view {
   display: none;
@@ -166,9 +167,6 @@
 }
 
 /* Village */
-.addskills-contents {
-  overflow-y: auto;
-}
 .addSkills {
   display: flex;
   position: relative;
@@ -229,45 +227,68 @@
 }
 .item {
   position: relative;
-}
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2px;
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
   background-color: #202020;
 }
-.item .name , .item .cost , .item .discBox {
-  visibility: hidden;
-}
-.item:hover .name , .item:hover .cost , .item:hover .discBox {
-  visibility: visible;
-}
-.item .name , .item .cost {
-  font-size: 14px;
-  color: white;
-  margin-top: 5px;
-  line-height: 14px;
-}
-.item .cost {
-  margin-top: unset;
+.item img {
+  width: 96px;
+  height: 96px;
 }
 .item .btn-wrap {
+  display: flex;
   width: 100%;
 }
-.item .btn-wrap .info:nth-of-type(1) {
-  border-radius: 5px 0 0 0;
-  border-right: 1px solid #202020;
-}
-.item .btn-wrap .buy:nth-of-type(2) {
-  border-radius: 0 5px 0 0;
-}
 .item .btn-wrap button {
-  width: 50%;
+  width: 49%;
   background-color: white;
   font-size: 12px;
+}
+.item .btn-wrap .info {
+  border-radius: 5px 0 0 5px;
+}
+.item .btn-wrap span {
+  display: inline-block;
+  width: 2%;
+  height: 100%;
+  background-color: red;
+}
+.item .btn-wrap .buy {
+  border-radius: 0 5px 5px 0;
+}
+.item .disc-wrap {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #202020;
+  padding: 5px;
+  transition: .5s;
+  visibility: hidden;
+}
+.item .disc-wrap.show {
+  visibility: visible;
+}
+.item .disc-wrap .closeBtn {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  top: 5px;
+  right: 5px;
+  background-image: url('./image/ico/ico_closeBtn.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.item .disc-wrap p {
+  color: white;
+  font-size: 12px;
+}
+.item .disc-wrap span.line {
+  display: inline-block;
+  width: 100%;
+  height: 1px;
+  background-color: white;
 }
