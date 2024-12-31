@@ -11,7 +11,7 @@ export default function Contents() {
         menu.eq(i).on('click' , function(){
             contents_view.removeClass('show')
             contents_view.eq(i).addClass('show')
-            // console.log(1)
+            console.log(1)
         })
     })
     return(
