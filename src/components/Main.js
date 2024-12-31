@@ -4,8 +4,8 @@ import Menu from '../components/Menu'
 import Contents from '../components/Contents'
 
 export default function Main() {
-    let [gold , setGold] = useState(90)
-
+    let [gold , setGold] = useState(100)
+    
     return (
         <>
             <FightView></FightView>

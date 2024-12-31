@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom'
 
 export default function Intro() {
     let nowLocation = useLocation()
+    console.log(nowLocation)
     if (nowLocation.pathname === "/Main") return null
 
     return (
