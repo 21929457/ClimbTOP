@@ -10,17 +10,17 @@ export default function Contents() {
     let menu = $('.icon-wrap span')
     let contentsView = $('.contents-view')
 
-    menu.each(function(i){
+    menu.map(function(i){
         menu.eq(i).on('click' , function(){
             setTab(i)
         })
     })
-    
     useEffect(function(){
         contentsView.removeClass('show')
         contentsView.eq(tab).addClass('show')
     } , [tab])
-    
+
+    console.log(1)
     return(
         <>
             <UserState></UserState>

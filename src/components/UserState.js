@@ -1,3 +1,5 @@
+import userImg from '../image/user/ddotg.jpg'
+
 export default function UserState() {
     return (
         <div className="contents-view show">
@@ -22,7 +24,30 @@ export default function UserState() {
 
             <div className="user-wrap">
 
-                <div className="character-image"></div>
+                <div className="user-info-wrap">
+                    
+                    <img src={userImg} alt='userImage' className="character-image"></img>
+
+                    <ul className="user-info">
+                        <li>
+                            <i>⚔️</i>
+                            <span>5</span>
+                        </li>
+                        <li>
+                            <i>🪄</i>
+                            <span>2</span>
+                        </li>
+                        <li>
+                            <i>🛡️</i>
+                            <span>10</span>
+                        </li>
+                        <li>
+                            <i>💧</i>
+                            <span>10</span>
+                        </li>
+                    </ul>
+
+                </div>
 
                 <div className="user-stack">
 
@@ -47,6 +72,7 @@ export default function UserState() {
                         <li className="bg-menuBg rounded-md"></li>
 
                     </ul>
+
                 </div>
             </div>
 
