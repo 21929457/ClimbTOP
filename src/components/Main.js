@@ -1,4 +1,3 @@
-/* eslint-disable array-callback-return */
 import {useState} from 'react'
 import FightView from '../components/FightView'
 import UserState from './UserState'

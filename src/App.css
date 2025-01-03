@@ -37,6 +37,7 @@
 
 /* Fight View */
 .fight-view {
+  position: relative;
   height: 250px;
 }
 .monster-hp-wrap {
@@ -57,7 +58,18 @@
   left: 10px;
   transform: translateY(-50%);
 }
-
+.level {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  right: 0;
+  bottom: 0;
+  padding: 0 10px;
+  color: white;
+  background-color: #4f4f4f;
+}
 /* Menu */
 .menu {
   display: flex;
