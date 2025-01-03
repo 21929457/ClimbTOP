@@ -267,9 +267,16 @@
   border-radius: 5px 5px 0 0;
   background-color: #202020;
 }
-.item img {
+.item-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 96px;
   height: 96px;
+}
+.item img {
+  min-width: 72px;
+  height: 72px;
 }
 .item .btn-wrap {
   display: flex;

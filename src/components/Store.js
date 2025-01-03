@@ -19,7 +19,9 @@ export default function Store() {
                        return(
                             <div className='item' key={data.id}>
                                     
-                                <img src={data.url} alt={data.id}/>
+                                <div className='item-img'>
+                                    <img src={data.url} alt={data.id}/>
+                                </div>
 
                                 <div className="btn-wrap">
                                     <button type='button' className="info" onClick={()=>{disc.eq(data.id).addClass('show')}}>정보</button>
