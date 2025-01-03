@@ -2,6 +2,7 @@ import {useState} from 'react'
 
 export default function FightView() {
     let [floor , setFloor] = useState(1)
+    
     return(
         <div className='fight-view'>
             <div className='monster-hp-wrap px-20'>
