@@ -1,14 +1,14 @@
 [
      {
         "id" : 0,
-        "url" : "url",
-        "name" : "코어 암",
-        "disc" : "방어 +10 체력 +10",
+        "url" : "https://raw.githubusercontent.com/21929457/ClimbTOP/refs/heads/master/src/image/items/longsword.png",
+        "name" : "망검",
+        "disc" : "공격 +10",
         "cost" : 100
      },
      {
         "id" : 1,
-        "url" : "url2",
+        "url" : "https://raw.githubusercontent.com/21929457/ClimbTOP/refs/heads/master/src/image/items/longsword.png",
         "name" : "리자드 소드",
         "disc" : "공격 + 10 체력 + 8",
         "cost" : 150
