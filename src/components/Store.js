@@ -1,14 +1,15 @@
 import $ from 'jquery'
 import axios from 'axios'
-import {useEffect} from 'react'
+import {useEffect , useState} from 'react'
 
 export default function Store() {
-    let buyBtn = $('.info')
+    let [itemData , setItemData] = useState([])
+
+    let infoBtn = $('.info')
     let closeBtn = $('.closeBtn')
     let disc = $('.disc-wrap')
-    let items = $('.items')
 
-    buyBtn.on('click' , function(){
+    infoBtn.on('click' , function(){
         disc.addClass('show')
     })
     closeBtn.on('click' , function(){
@@ -16,17 +17,20 @@ export default function Store() {
     })
 
     useEffect(function(){
-        let promise = new Promise(function(success , fail){
-            axios.get('https://raw.githubusercontent.com/21929457/ClimbTOP/refs/heads/master/src/data/item.json').then(function(data){
-                success(data)
-            })
-        }).then(function(result){
-            result.data.map(function(data){
-                items.append(`
-                    <div className='item'>
-                            
-                            <img alt="item_${data.id}"/>
-        
+        axios.get('https://raw.githubusercontent.com/21929457/ClimbTOP/refs/heads/master/src/data/item.json').then(function(data){
+            setItemData(data.data)
+        })
+    } , [])
+    
+    return(
+        <div className='items'>
+                {
+                    itemData.map((data)=>{
+                       return(
+                        <div className='item'>
+                                
+                            <img alt="item_0"/>
+
                             <div className="btn-wrap">
                                 <button type='button' className="info">정보</button>
                                 <span></span>
@@ -35,22 +39,15 @@ export default function Store() {
                             
                             <div className='disc-wrap'>
                                 <button type='button' className='closeBtn'></button>
-                                <p className='name'>${data.name}</p>
-                                <p className='cost'><span>${data.cost}</span>G</p>
+                                <p className='name'>{data.name}</p>
+                                <p className='cost'><span>{data.cost}</span>G</p>
                                 <span className='line'></span>
-                                <p className='disc'>${data.disc}</p>
+                                <p className='disc'>{data.disc}</p>
                             </div>
                         </div>
-                    `)
-            })
-        })
-    } , [])
-    
-    return(
-        <div className="contents-view store-contents">
-
-            <div className='items'></div>
-            
-        </div>
+                        )
+                    })
+                }
+            </div>
     )
 }

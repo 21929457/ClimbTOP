@@ -1,6 +1,6 @@
 export default function Village() {
     return (
-        <div className="contents-view addskills-contents">
+        <>
             <div className="addSkills-wrap">
 
                 <div className="addSkills onsen">
@@ -10,7 +10,7 @@ export default function Village() {
                         <button type='button'>-5 G</button>
                     </div>
                 </div>
-                
+
                 <div className="addSkills buff">
                     <div className="txt">
                         <h4 className='text-lg'>원소 구슬</h4>
@@ -18,8 +18,8 @@ export default function Village() {
                         <button type='button'>-10 G</button>
                     </div>
                 </div>
-                
+
             </div>
-        </div>
+        </>
     )
 }

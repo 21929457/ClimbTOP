@@ -2,7 +2,7 @@ import userImg from '../image/user/ddotg.jpg'
 
 export default function UserState() {
     return (
-        <div className="contents-view show">
+        <>
 
             <div className="user-state">
 
@@ -75,7 +75,6 @@ export default function UserState() {
 
                 </div>
             </div>
-
-        </div>
+        </>
     )
 }
