@@ -58,6 +58,21 @@
   left: 10px;
   transform: translateY(-50%);
 }
+.user , .monster {
+  position: absolute;
+  bottom: 0;
+  background-color: white;
+}
+.user {
+  width: 64px;
+  height: 64px;
+  left: 30px;
+}
+.monster {
+  width: 128px;
+  height: 128px;
+  right: 30px;
+}
 .floor {
   display: flex;
   position: absolute;
@@ -133,6 +148,7 @@
   height: 15px;
   margin: 0 auto;
   overflow: hidden;
+  border: 1px solid #202020;
 }
 .user-hp-wrap .user-hp , .user-mp-wrap .user-mp {
   position: absolute;
@@ -257,7 +273,7 @@
   color: #202020;
 }
 
-/* store */
+/* Market */
 .items {
   display: flex;
   justify-content: center;
@@ -297,8 +313,17 @@
   width: 2%;
   height: 100%;
 }
-.item .btn-wrap .buy {
+.item .btn-wrap .buy , .item .btn-wrap .equip {
   border-radius: 0 5px 5px 0;
+}
+.item .btn-wrap .buy.hide {
+  display: none;
+}
+.item .btn-wrap .equip {
+  display: none;
+}
+.item .btn-wrap .equip.show {
+  display: block;
 }
 .item .disc-wrap {
   display: flex;

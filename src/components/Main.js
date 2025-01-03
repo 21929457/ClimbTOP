@@ -2,10 +2,12 @@ import {useState} from 'react'
 import FightView from '../components/FightView'
 import UserState from './UserState'
 import Village from './Village'
-import Store from './Store'
+import Store from './Market'
+import { useSelector } from 'react-redux'
 
 export default function Main() {
-    let [gold , setGold] = useState(100)
+    let gold = useSelector((state)=>{return state})
+    
     let [tab , setTab] = useState(1)
     let tabs = [
         { id: 1, content: <UserState></UserState> },
@@ -30,7 +32,7 @@ export default function Main() {
                     })
                 }
             </div>
-            <p className="gold">보유골드 : {gold}G</p>
+            <p className="gold">보유골드 : {gold.gold}G</p>
        </div>
 
             <div className='content-wrap p-5'>
