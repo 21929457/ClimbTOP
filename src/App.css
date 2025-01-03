@@ -58,7 +58,7 @@
   left: 10px;
   transform: translateY(-50%);
 }
-.level {
+.floor {
   display: flex;
   position: absolute;
   justify-content: center;
@@ -69,7 +69,9 @@
   padding: 0 10px;
   color: white;
   background-color: #4f4f4f;
+  font-weight: 600;
 }
+
 /* Menu */
 .menu {
   display: flex;
